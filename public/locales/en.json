@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "cases": "Cases",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Introducing Smart Retail Technology",
+    "title": "Smart Retail. Smarter Prices.",
+    "description": "Transform your retail operations with Bluetooth and Wi-Fi powered smart price tags. Real-time updates, zero errors, maximum efficiency.",
+    "cta_primary": "Get Started",
+    "cta_secondary": "Explore Solutions"
+  },
+  "footer": {
+    "description": "Pioneering smart retail technology in Uzbekistan. Transform your store with intelligent price tags.",
+    "copyright": "OneTag Smart Solutions. All rights reserved.",
+    "made_in": "Made with ❤️ in Uzbekistan"
+  }
+}

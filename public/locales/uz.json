@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "solutions": "Yechimlar",
+    "cases": "Misollar",
+    "about": "Biz haqimizda",
+    "contact": "Aloqa"
+  },
+  "hero": {
+    "badge": "Aqlli savdo texnologiyasini taqdim etamiz",
+    "title": "Aqlli savdo. Aqlli narxlar.",
+    "description": "Bluetooth va Wi-Fi bilan ishlaydigan aqlli narx teglar bilan savdo operatsiyalaringizni o'zgartiring. Real vaqtda yangilanishlar, xatolar yo'q, maksimal samaradorlik.",
+    "cta_primary": "Boshlash",
+    "cta_secondary": "Yechimlarni ko'rish"
+  },
+  "footer": {
+    "description": "O'zbekistonda aqlli savdo texnologiyasining kashshofi. Do'koningizni aqlli narx teglari bilan o'zgartiring.",
+    "copyright": "OneTag Smart Solutions. Barcha huquqlar himoyalangan.",
+    "made_in": "❤️ bilan O'zbekistonda yaratilgan"
+  }
+}
