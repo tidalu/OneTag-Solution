@@ -60,10 +60,23 @@ import { metadata } from "./metadata";
 export { metadata };
 
 import ClientLayout from "./layout.client";
+import { SchemaOrg } from "@/src/components/schema-org";
+import { GoogleAnalytics } from "@/src/components/analytics/google-analytics";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Analytics */}
+        {gaId && <GoogleAnalytics measurementId={gaId} />}
+
+        {/* Organization Schema */}
+        <SchemaOrg type="Organization" />
+        {/* LocalBusiness Schema */}
+        <SchemaOrg type="LocalBusiness" />
+      </head>
       <body>
         <ClientLayout>{children}</ClientLayout>
       </body>

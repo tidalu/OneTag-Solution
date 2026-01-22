@@ -29,7 +29,7 @@ export default function ESLAccessoriesPage() {
         <div className="relative min-h-[500px] sm:min-h-[70vh] w-full h-full flex items-center justify-center overflow-hidden px-6 pt-12 pb-6 sm:py-16 2md:py-20 rounded-b-4xl">
           <Image
             src="/esl-accessories/ESL-accessories-bg.png"
-            alt="ESL background image"
+            alt="Electronic shelf label accessories including wireless base stations and mounting equipment"
             fill
             objectFit="cover"
           />
@@ -120,7 +120,7 @@ export default function ESLAccessoriesPage() {
                         <div className="group-hover:scale-110 relative max-h-34 2lg:max-h-40 h-full w-full transition-all duration-300">
                           <Image
                             src={item.src}
-                            alt={item.name}
+                            alt={`${item.name} - Electronic shelf label accessory for retail price display systems`}
                             // height={60}
                             // width={40}
                             quality={100}
@@ -160,7 +160,7 @@ export default function ESLAccessoriesPage() {
               <div className="relative w-68 2lg:w-80 mx-auto aspect-square bg-gray-200 dark:bg-gray-700 rounded-xl">
                 <Image
                   src={data.imgSrc}
-                  alt={data.heading}
+                  alt={`${data.heading} - ${data.subHeading} for electronic shelf label systems`}
                   fill
                   className="aspect-square"
                 />

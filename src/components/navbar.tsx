@@ -157,7 +157,7 @@ export function Navbar() {
                   <Image
                     src={theme === "dark" ? "/logo2.svg" : "/logo1.svg"}
                     key={theme}
-                    alt="Logo"
+                    alt="Onetag Smart Solutions - Electronic Shelf Labels Provider"
                     fill
                     priority
                     className="object-contain transition-all duration-300"
@@ -184,7 +184,7 @@ export function Navbar() {
                   <Image
                     src={theme === "dark" ? "/logo2.svg" : "/logo1.svg"}
                     key={theme}
-                    alt="Logo"
+                    alt="Onetag Smart Solutions - Electronic Shelf Labels Provider"
                     fill
                     priority
                     className="object-contain transition-all duration-300"

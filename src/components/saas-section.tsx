@@ -60,7 +60,7 @@ function SaasSection() {
               <Image
                 // src="/electronics-shelf.webp"
                 src="/ESL-bg.png"
-                alt="one tag solution saas"
+                alt="Onetag cloud-based SaaS platform for electronic shelf label management and retail price automation"
                 className="rounded-3xl aspect-6/3"
                 // quality={80}
                 height={300}
@@ -80,7 +80,7 @@ function SaasSection() {
             <div>
               <Image
                 src="/SaaS-img.png"
-                alt="one tag solution saas"
+                alt="Onetag cloud-based SaaS platform for electronic shelf label management and retail price automation"
                 className="rounded-3xl aspect-6/3"
                 // quality={80}
                 height={300}

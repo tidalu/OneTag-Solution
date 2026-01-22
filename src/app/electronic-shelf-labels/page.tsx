@@ -119,7 +119,7 @@ export default function ZkongShieldRebuilt() {
             <div className="grid sm:grid-cols-2 3md:flex gap-4 3md:gap-0 max-sm:py-10 p-4 3md:p-0 relative w-full 3md:aspect-5/2 overflow-hidden rounded">
               <Image
                 src={"/ESL/zkong-electronic-shelf-labels-advantage.webp"}
-                alt="zkong-electronic-shelf-labels-advantage"
+                alt="ZKONG electronic shelf labels advantages: real-time pricing updates, extended battery life, cloud management, and seamless POS integration"
                 fill
                 className="max-sm:object-cover"
               />
@@ -249,7 +249,7 @@ export default function ZkongShieldRebuilt() {
               >
                 <Image
                   src={item.src}
-                  alt={item.name}
+                  alt={`${item.name} - Electronic shelf label application showcase for retail industry`}
                   fill
                   className="opacity-75"
                 />

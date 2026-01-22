@@ -83,7 +83,7 @@ function EslVerticalTab({
             <div className="w-full h-48 relative rounded overflow-hidden bg-gray-100 dark:bg-gray-600">
               <Image
                 src={featureData[activeFeatureIndex].img}
-                alt={featureData[activeFeatureIndex].title}
+                alt={`${featureData[activeFeatureIndex].title} - Electronic shelf label feature demonstration`}
                 fill
                 className="object-cover"
               />
@@ -96,7 +96,7 @@ function EslVerticalTab({
       <div className="w-full min-h-48 aspect-4/2 relative rounded-[10px] sm:rounded overflow-hidden bg-gray-100 dark:bg-gray-600">
         <Image
           src={featureData[activeFeatureIndex].img}
-          alt={featureData[activeFeatureIndex].title}
+          alt={`${featureData[activeFeatureIndex].title} - Electronic shelf label feature demonstration`}
           fill
           className="object-cover"
         />

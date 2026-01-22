@@ -93,7 +93,7 @@ export default function ZKONGPlatform() {
           <FadeAnimation className="dark:bg-white p-4">
             <Image
               src={`/esl-cloud-platform/retail-cloud-platform-${language}.webp`}
-              alt="cloud platform"
+              alt="ZKONG cloud platform dashboard showing centralized ESL management system with real-time pricing control for multiple retail stores"
               width={1200}
               height={800}
               className="mx-auto"
@@ -132,7 +132,7 @@ export default function ZKONGPlatform() {
                         {/* sm:h-48 */}
                         <Image
                           src={advantage.imgSrc}
-                          alt={advantage.heading}
+                          alt={`${advantage.heading} - ESL cloud platform feature for retail price management and automation`}
                           fill
                         />
                       </div>

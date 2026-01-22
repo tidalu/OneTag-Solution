@@ -355,7 +355,7 @@ export default function CasesPage() {
                       <motion.div className="absolute inset-0">
                         <Image
                           src={caseStudy.image || "/placeholder.svg"}
-                          alt={caseStudy.title}
+                          alt={`${caseStudy.title} - ${caseStudy.client} in ${caseStudy.location} using Onetag electronic shelf labels`}
                           fill
                           className="object-cover"
                           style={{ willChange: "transform" }}
