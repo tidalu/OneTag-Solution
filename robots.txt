@@ -1,1 +1,25 @@
+# Onetag Smart Solutions - Robots.txt
+# https://onetag.uz
+
 User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /legal/_cookies
+
+# Sitemap location
+Sitemap: https://onetag.uz/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
