@@ -8,6 +8,7 @@ import { FadeAnimation } from "@/src/motion-animations/FadeAnimation";
 import FloatingParticles from "@/src/components/FloatingParticles";
 import { useLanguage } from "@/src/contexts/language-context";
 import AnimationText from "@/src/components/Animation-text";
+import { trackFormSubmission } from "@/src/components/analytics/google-analytics";
 
 const heroSection = {
   en: {
@@ -290,6 +291,10 @@ export default function ContactPage() {
           body: JSON.stringify(formData),
         }
       );
+
+      // Track successful form submission
+      trackFormSubmission("Contact Form");
+
       setFormData({ name: "", email: "", company: "", message: "" });
       setIsSubmitting(false);
       alert("Message sent successfully!");
