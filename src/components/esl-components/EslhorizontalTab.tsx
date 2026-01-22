@@ -66,7 +66,7 @@ function EslHorizontalTab({ sectionData }: EslHorizontalTab) {
             <div className="w-full md:w-1/2 h-40 md:h-56 relative">
               <Image
                 src={sectionData.models[activeModelIndex].img}
-                alt={sectionData.models[activeModelIndex].title}
+                alt={`${sectionData.models[activeModelIndex].title} - Electronic shelf label model specifications and features`}
                 fill
                 className="object-contain p-3"
               />

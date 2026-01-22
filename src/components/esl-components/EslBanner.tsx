@@ -17,7 +17,7 @@ function EslBanner({ hero, language, theme}: EslHero) {
       <div className="min-h-[500px] sm:min-h-[70vh] relative w-full flex items-center justify-center px-6 pt-12 pb-6 sm:py-16 2md:py-20 rounded-b-4xl overflow-hidden">
         <Image
           src="/ESL-bg.png"
-          alt="ESL background image"
+          alt="Electronic shelf labels in modern retail store with digital price displays"
           fill
           objectFit="cover"
         />

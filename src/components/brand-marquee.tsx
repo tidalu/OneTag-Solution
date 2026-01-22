@@ -119,42 +119,42 @@ function BrandMarquee() {
                         className="min-w-20"
                         height={100}
                         width={100}
-                        alt="logo"
+                        alt=""
                       />
                       <Image
                         src="/brands/carrefour.svg"
                         className="min-w-20"
                         height={100}
                         width={100}
-                        alt="logo"
+                        alt=""
                       />
                       <Image
                         src="/brands/lenovo.svg"
                         className="min-w-20"
                         height={100}
                         width={100}
-                        alt="logo"
+                        alt=""
                       />
                       <Image
                         src="/brands/samsung.svg"
                         className="min-w-20"
                         height={100}
                         width={100}
-                        alt="logo"
+                        alt=""
                       />
                       <Image
                         src="/brands/walmart.svg"
                         className="min-w-20"
                         height={100}
                         width={100}
-                        alt="logo"
+                        alt=""
                       />
                       <Image
                         src="/brands/xiaomi.svg"
                         className="min-w-20"
                         height={100}
                         width={100}
-                        alt="logo"
+                        alt=""
                       />
                     </React.Fragment>
                   ))}
@@ -172,7 +172,7 @@ function BrandMarquee() {
                     className="size-14 2md:size-16"
                     height={80}
                     width={100}
-                    alt={brand.name}
+                    alt={`${brand.name} - Trusted retail technology partner and client of Onetag Smart Solutions`}
                   />
                 </div>
               ))}

@@ -469,7 +469,7 @@ export function ProductShowcase() {
                 <motion.div className="relative w-full h-full">
                   <Image
                     src={product.image}
-                    alt={product.name}
+                    alt={`${product.name} - ZKONG electronic shelf label for retail stores`}
                     fill
                     className="object-cover group-hover:brightness-110 transition-all duration-700"
                   />
