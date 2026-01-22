@@ -1,14 +1,15 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export interface GoogleAnalyticsProps {
   measurementId: string;
 }
 
-export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
+// Inner component that uses useSearchParams
+function GoogleAnalyticsTracker({ measurementId }: GoogleAnalyticsProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -21,6 +22,11 @@ export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
     }
   }, [pathname, searchParams, measurementId]);
 
+  return null;
+}
+
+// Main component wrapped with Suspense
+export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
   return (
     <>
       <Script
@@ -41,6 +47,9 @@ export function GoogleAnalytics({ measurementId }: GoogleAnalyticsProps) {
           `,
         }}
       />
+      <Suspense fallback={null}>
+        <GoogleAnalyticsTracker measurementId={measurementId} />
+      </Suspense>
     </>
   );
 }
