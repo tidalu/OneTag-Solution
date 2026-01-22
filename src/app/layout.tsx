@@ -60,10 +60,17 @@ import { metadata } from "./metadata";
 export { metadata };
 
 import ClientLayout from "./layout.client";
+import { SchemaOrg } from "@/src/components/schema-org";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Organization Schema */}
+        <SchemaOrg type="Organization" />
+        {/* LocalBusiness Schema */}
+        <SchemaOrg type="LocalBusiness" />
+      </head>
       <body>
         <ClientLayout>{children}</ClientLayout>
       </body>
