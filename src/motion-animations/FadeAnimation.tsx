@@ -63,6 +63,9 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+// Initialize AOS only once globally
+let aosInitialized = false;
+
 export function FadeAnimation({
   direction = 'up',
   children,
@@ -77,16 +80,17 @@ export function FadeAnimation({
   repeatOnScroll?: boolean;
 }) {
   useEffect(() => {
-    AOS.init({
-      duration: 400, // total animation duration (ms)
-      easing: 'ease-out', // smoother animation
-      once: !repeatOnScroll, // animate only once or every scroll
-      offset: 15, // trigger point
-    });
-
-    // refresh AOS when content changes
-    AOS.refresh();
-  }, [repeatOnScroll]);
+    if (!aosInitialized) {
+      AOS.init({
+        duration: 400,
+        easing: 'ease-out',
+        once: true, // Only animate once by default
+        offset: 15,
+        disable: false,
+      });
+      aosInitialized = true;
+    }
+  }, []);
 
   // Map direction to AOS animation types
   const directionMap: Record<string, string> = {
@@ -100,7 +104,8 @@ export function FadeAnimation({
         React.isValidElement(child) ? (
           <div
             data-aos={directionMap[direction]}
-            data-aos-delay={index * staggerChildren * 100} // add delay for stagger
+            data-aos-delay={index * staggerChildren * 100}
+            data-aos-once={!repeatOnScroll}
           >
             {child}
           </div>
