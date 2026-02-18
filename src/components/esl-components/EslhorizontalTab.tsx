@@ -69,6 +69,7 @@ function EslHorizontalTab({ sectionData }: EslHorizontalTab) {
                 alt={`${sectionData.models[activeModelIndex].title} - Electronic shelf label model specifications and features`}
                 fill
                 className="object-contain p-3"
+                priority={true}
               />
             </div>
 

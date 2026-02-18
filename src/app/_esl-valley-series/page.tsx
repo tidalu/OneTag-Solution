@@ -759,6 +759,7 @@ const carouselData = {
                 alt="shelf"
                 fill
                 className="object-cover"
+                priority={true}
               />
             </div>
           </div>

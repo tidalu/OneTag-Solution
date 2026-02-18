@@ -32,6 +32,7 @@ export default function ESLAccessoriesPage() {
             alt="Electronic shelf label accessories including wireless base stations and mounting equipment"
             fill
             objectFit="cover"
+            priority={true}
           />
 
           <div
@@ -126,6 +127,7 @@ export default function ESLAccessoriesPage() {
                             quality={100}
                             fill
                             className="object-contain"
+                            priority={true}
                             // className="max-h-34 2lg:max-h-40 w-24 2lg:w-30 h-full"
                           />
                         </div>
@@ -163,6 +165,7 @@ export default function ESLAccessoriesPage() {
                   alt={`${data.heading} - ${data.subHeading} for electronic shelf label systems`}
                   fill
                   className="aspect-square"
+                  priority={true}
                 />
               </div>
               <div className="space-y-2 text-left">

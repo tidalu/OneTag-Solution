@@ -20,6 +20,7 @@ function EslBanner({ hero, language, theme}: EslHero) {
           alt="Electronic shelf labels in modern retail store with digital price displays"
           fill
           objectFit="cover"
+          priority={true}
         />
 
         {/* <div className="absolute z-1 inset-0 pointer-events-none h-full w-full black-white-fade"> */}

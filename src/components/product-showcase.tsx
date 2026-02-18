@@ -472,6 +472,7 @@ export function ProductShowcase() {
                     alt={`${product.name} - ZKONG electronic shelf label for retail stores`}
                     fill
                     className="object-cover group-hover:brightness-110 transition-all duration-700"
+                    priority={true}
                   />
                 </motion.div>
 

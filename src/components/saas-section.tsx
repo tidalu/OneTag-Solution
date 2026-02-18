@@ -65,6 +65,7 @@ function SaasSection() {
                 // quality={80}
                 height={300}
                 width={600}
+                priority={true}
               />
             </div>
           </div>
@@ -85,6 +86,7 @@ function SaasSection() {
                 // quality={80}
                 height={300}
                 width={600}
+                priority={true}
               />
             </div>
           </div>

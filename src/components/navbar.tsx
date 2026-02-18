@@ -272,6 +272,7 @@ export function Navbar() {
                       width={22}
                       height={22}
                       className="rounded-full"
+                      priority={true}
                     />
                   )}
                 </motion.button>
@@ -304,6 +305,7 @@ export function Navbar() {
                             width={22}
                             height={22}
                             className="rounded-full"
+                            priority={true}
                           />
                           {lang.label}
                         </button>
@@ -498,6 +500,7 @@ export function Navbar() {
                         width={22}
                         height={22}
                         className="rounded-full"
+                        priority={true}
                       />
                       <span>{lang.code.toUpperCase()}</span>
                     </motion.button>
