@@ -122,6 +122,7 @@ export default function ZkongShieldRebuilt() {
                 alt="ZKONG electronic shelf labels advantages: real-time pricing updates, extended battery life, cloud management, and seamless POS integration"
                 fill
                 className="max-sm:object-cover"
+                priority={true}
               />
 
               {advantagesSection[language].cards.map((item, index) => {
@@ -252,6 +253,7 @@ export default function ZkongShieldRebuilt() {
                   alt={`${item.name} - Electronic shelf label application showcase for retail industry`}
                   fill
                   className="opacity-75"
+                  priority={true}
                 />
                 <div className="z-1 flex flex-col justify-between h-full w-full">
                   <div className="bg-white dark:bg-slate-700 min-h-1/2 w-full p-2 md:opacity-0 group-hover:opacity-100">

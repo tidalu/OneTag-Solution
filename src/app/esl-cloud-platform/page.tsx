@@ -26,13 +26,14 @@ export default function ZKONGPlatform() {
       <FloatingParticles />
 
       <section>
-        <div className="min-h-[500px] sm:min-h-[70vh] flex items-center relative overflow-hidden px-6 rounded-b-4xl pt-12 pb-6 sm:py-16 2md:py-20">
+        <div className="min-h-125 sm:min-h-[70vh] flex items-center relative overflow-hidden px-6 rounded-b-4xl pt-12 pb-6 sm:py-16 2md:py-20">
           <div className={`absolute inset-0 w-full h-full`}>
             <video
               preload="auto"
               autoPlay
               muted
               loop
+              playsInline
               className="inset-0 w-full h-full object-cover object-top"
             >
               <source
@@ -97,6 +98,7 @@ export default function ZKONGPlatform() {
               width={1200}
               height={800}
               className="mx-auto"
+              priority={true}
             />
           </FadeAnimation>
         </div>
@@ -134,6 +136,7 @@ export default function ZKONGPlatform() {
                           src={advantage.imgSrc}
                           alt={`${advantage.heading} - ESL cloud platform feature for retail price management and automation`}
                           fill
+                          priority={true}
                         />
                       </div>
                     </div>

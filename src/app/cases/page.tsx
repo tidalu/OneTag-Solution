@@ -359,6 +359,7 @@ export default function CasesPage() {
                           fill
                           className="object-cover"
                           style={{ willChange: "transform" }}
+                          priority={true}
                         />
                       </motion.div>
                       <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent z-10" />

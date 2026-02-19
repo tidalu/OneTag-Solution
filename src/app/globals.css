@@ -530,9 +530,19 @@ xl	80rem (1280px)	@media (width >= 80rem) { ... }
 
 .animated-bg {
   background-size: 200% 200%;
-  animation: gradientMove 15s ease-in-out infinite;
-  will-change: background-position;
+  
+  @media (min-width: 770px) {
+    will-change: background-position;
+    animation: gradientMove 15s ease-in-out infinite;
+  }
 }
+@media (min-width: 770px) {
+.animated-bg {
+    will-change: background-position;
+    animation: gradientMove 15s ease-in-out infinite;
+  }
+}
+
 
 /* Dark theme */
 .bg-dark {

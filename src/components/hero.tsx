@@ -27,6 +27,7 @@ export function Hero() {
           autoPlay
           muted
           loop
+          playsInline
           className="inset-0 w-full h-full object-fill"
         >
           <source src={"/banner-video-dark.mp4"} type="video/mp4" />
@@ -42,6 +43,7 @@ export function Hero() {
           autoPlay
           muted
           loop
+          playsInline
           className="inset-0 w-full h-full object-fill"
         >
           <source src={"/banner-video.mp4"} type="video/mp4" />

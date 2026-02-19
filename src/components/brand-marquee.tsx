@@ -173,6 +173,7 @@ function BrandMarquee() {
                     height={80}
                     width={100}
                     alt={`${brand.name} - Trusted retail technology partner and client of Onetag Smart Solutions`}
+                    priority={true}
                   />
                 </div>
               ))}

@@ -86,6 +86,7 @@ function EslVerticalTab({
                 alt={`${featureData[activeFeatureIndex].title} - Electronic shelf label feature demonstration`}
                 fill
                 className="object-cover"
+                priority={true}
               />
             </div>
           </div>
@@ -99,6 +100,7 @@ function EslVerticalTab({
           alt={`${featureData[activeFeatureIndex].title} - Electronic shelf label feature demonstration`}
           fill
           className="object-cover"
+          priority={true}
         />
       </div>
       </div>

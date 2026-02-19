@@ -131,7 +131,6 @@
 // }
 
 
-
 import { useEffect, useRef, useState } from "react";
 
 type Breakpoints = {
@@ -179,24 +178,48 @@ export default function InfiniteMarquee({
   const rafRef = useRef<number | null>(null);
   const offsetRef = useRef(0);
   const [active, setActive] = useState(0);
+  
+  // FIX 1: Track window width in state to force re-render on resize/rotate
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  useEffect(() => {
+    // Set initial width
+    setWindowWidth(window.innerWidth);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Helper to determine gap size based on screen width (matching your original gap-4 / gap-6 logic)
+  const getGapValue = (width: number) => {
+    if (width < 640) return 16; // gap-4 = 16px
+    return 24; // sm:gap-6 = 24px
+  };
 
   const getResponsiveValue = (values: Breakpoints | ImageHeights) => {
-    if (typeof window === "undefined") return values.base;
-    const w = window.innerWidth;
-
-    if (w < 640) return values.base;
-    if (w < 768 && values.sm) return values.sm;
-    if (w < 1024 && values.md) return values.md;
+    if (typeof window === "undefined" || windowWidth === 0) return values.base;
+    
+    // Use the tracked windowWidth state
+    if (windowWidth < 640) return values.base;
+    if (windowWidth < 768 && values.sm) return values.sm;
+    if (windowWidth < 1024 && values.md) return values.md;
     if (values.lg) return values.lg;
 
     return values.base;
   };
 
-  const ITEM_WIDTH = getResponsiveValue(breakpoints);
+  const IMAGE_WIDTH = getResponsiveValue(breakpoints);
   const IMAGE_HEIGHT = getResponsiveValue(imageHeights);
+  const GAP = getGapValue(windowWidth);
 
+  // FIX 2: The Item Width MUST include the gap for the math to work
+  const ITEM_FULL_WIDTH = IMAGE_WIDTH + GAP; 
   const TOTAL = images.length;
-  const LOOP_WIDTH = ITEM_WIDTH * TOTAL;
+  const LOOP_WIDTH = ITEM_FULL_WIDTH * TOTAL;
 
   // 🔁 Infinite seamless loop
   useEffect(() => {
@@ -212,9 +235,10 @@ export default function InfiniteMarquee({
 
       track.style.transform = `translateX(-${offsetRef.current}px)`;
 
+      // Update active dot based on center point
       const index =
         Math.floor(
-          (offsetRef.current + ITEM_WIDTH / 2) / ITEM_WIDTH
+          (offsetRef.current + ITEM_FULL_WIDTH / 2) / ITEM_FULL_WIDTH
         ) % TOTAL;
 
       setActive(index);
@@ -227,14 +251,19 @@ export default function InfiniteMarquee({
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [ITEM_WIDTH, LOOP_WIDTH, TOTAL, speed]);
+  }, [ITEM_FULL_WIDTH, LOOP_WIDTH, TOTAL, speed]);
 
   // 🎯 Dot navigation
   const jumpTo = (index: number) => {
     const current = offsetRef.current % LOOP_WIDTH;
-    const target = index * ITEM_WIDTH;
+    const target = index * ITEM_FULL_WIDTH; // Use full width (img + gap)
 
     let delta = target - current;
+    // Calculate shortest path logic
+    // (Optional: You can keep your simpler logic if you prefer)
+    // if (delta < 0) delta += LOOP_WIDTH; 
+
+    // Keeping your original direction logic for consistency:
     if (delta < 0) delta += LOOP_WIDTH;
 
     const duration = 600;
@@ -262,14 +291,20 @@ export default function InfiniteMarquee({
       <div className="relative">
         <div
           ref={trackRef}
-          className="flex gap-4 sm:gap-6 will-change-transform"
-          style={{ width: ITEM_WIDTH * TOTAL * 2 }}
+          // FIX 3: Removed 'gap-4 sm:gap-6' classes. 
+          // We handle spacing via marginRight in the item style to ensure JS/CSS sync.
+          className="flex will-change-transform"
+          style={{ width: ITEM_FULL_WIDTH * TOTAL * 2 }}
         >
           {[...images, ...images].map((src, i) => (
             <div
               key={i}
               className="shrink-0 rounded-xl overflow-hidden"
-              style={{ width: ITEM_WIDTH }}
+              // FIX 4: Explicitly set width AND margin here based on JS calculations
+              style={{ 
+                width: IMAGE_WIDTH,
+                marginRight: GAP 
+              }}
             >
               <img
                 src={src}
