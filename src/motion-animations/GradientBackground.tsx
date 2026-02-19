@@ -5,6 +5,17 @@ import { useTheme } from "../contexts/theme-context";
 function GradientBackground() {
   const { theme } = useTheme();
   return (
+    <div
+      className={`animated-bg fixed inset-0 -z-10 ${
+        theme === "dark" ? "bg-dark" : "bg-light"
+      }`}
+    />  
+  );
+}
+
+export default GradientBackground;
+
+
     // <motion.div
     //   animate={{
     //     background:
@@ -25,12 +36,3 @@ function GradientBackground() {
     //   }}
     //   className="animated-bg fixed inset-0 -z-10 bg-size-[200%_200%] bg-linear-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"
     // />
-    <div
-      className={`animated-bg fixed inset-0 -z-10 ${
-        theme === "dark" ? "bg-dark" : "bg-light"
-      }`}
-    />  
-  );
-}
-
-export default GradientBackground;
